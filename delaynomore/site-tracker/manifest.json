@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "DelayNoMore Site Tracker",
+  "version": "1.0",
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": ["http://localhost:8080/"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["tracker.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["cooldown.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_title": "Site Tracker Active"
+  }
+}
